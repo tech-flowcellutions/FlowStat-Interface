@@ -1,0 +1,8 @@
+
+# ignore underscore files
+**/_*
+**/.DS_Store
+
+# ignore Dashboard and Interface
+FlowStat_Docker/Dashboard
+FlowStat_Docker/Interface

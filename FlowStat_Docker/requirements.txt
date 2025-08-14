@@ -1,0 +1,7 @@
+flask-socketio
+python-dotenv
+supabase
+numpy
+pyserial
+gunicorn
+eventlet

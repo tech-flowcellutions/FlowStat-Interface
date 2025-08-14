@@ -1,0 +1,6 @@
+# Ignore underscore and system files
+**/_*
+**/.*
+
+# include .env file
+!.env

@@ -1,0 +1,33 @@
+# Usage
+#   Start:              docker compose up
+#   With helpers:       docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up
+#   Stop:               docker compose down
+#   Destroy:            docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down -v --remove-orphans
+#   Reset everything:  ./reset.sh
+
+name: flowstat
+
+services:
+
+  flowstat:
+
+    build:
+      context: .
+
+    ports:
+      - "${FLOWSTAT_PORT}:${FLOWSTAT_PORT}"
+
+    environment:
+      # supabase
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_PUBLIC_URL: ${SUPABASE_URL}
+      ANON_KEY: ${ANON_KEY}
+      # db-user
+      DB_USERNAME: ${DB_USERNAME}
+      DB_USER_PW: ${DB_USER_PW}
+      # server
+      FLOWSTAT_HOST: ${FLOWSTAT_HOST}
+      FLOWSTAT_PORT: ${FLOWSTAT_PORT}
+
+    # usb connectivity
+    privileged: true
